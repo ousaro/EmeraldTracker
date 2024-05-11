@@ -1,13 +1,90 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color:#fff;
+  padding: 2em;
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+  color: #212121;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.bold { 
+  font-weight: bolder;
+}
+
+input {
+    width: 100%;
+    padding: 4px 4px;
+    margin: 4px 0;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    background-color: #00BCD4;
+    font-size: 16px;
+    padding: 8px 8px;
+    text-decoration: none;
+    margin: 4px 4px;
+    cursor: pointer;
+}
+
+
+.sell { 
+  background-color: white;
+  color: #D1C4E9;
+}
+
+.ftc-intro {
+  background-color:#0097A7;
+  color:white;
+  width:100%;
+  padding:5px;
+}
+
+.form-group {
+  background-color:#0097A7;
+  color:black;
+  width:100%;
+  padding:4px;
+  border-radius: 2px;
+  background-color: #f8f8f8;
+}
+
+.form-break {
+  background-color:#fff;
+  color:white;
+  width:100%;
+  padding:0px;
+}
+
+.horizontal-rule {
+  background-color:#BDBDBD;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.column2 {
+  float: left;
+  width: 20%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.info {
+  font-size: 14px;
+  padding: 10px 10px;
+  margin: 4px 2px;
 }
