@@ -92,8 +92,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [],
@@ -106,8 +105,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -126,8 +124,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -169,8 +166,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -225,8 +221,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -245,8 +240,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -6988,11 +6982,16 @@
       "links": {},
       "address": "0x79051A2faFcC216A55d3897474012145d158F170",
       "transactionHash": "0xeed3e400fece28379b5880408b4e7a1a38db794b6d4b27a2fca8feda0a74dc32"
+    },
+    "1716824042151": {
+      "events": {},
+      "links": {},
+      "address": "0x44Bf82B032Fb74d789d9cb24877088E45416be04",
+      "transactionHash": "0xb94dfcb12edcbe76adf410910ef165ebccd91c8e4e3c7748b7acbde805b78506"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-27T09:11:23.985Z",
-  "networkType": "ethereum",
+  "updatedAt": "2024-05-27T16:05:07.545Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

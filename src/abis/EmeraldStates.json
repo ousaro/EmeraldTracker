@@ -15,15 +15,15 @@
     "absolutePath": "project:/src/contracts/emeraldbase/EmeraldStates.sol",
     "exportedSymbols": {
       "EmeraldStates": [
-        1774
+        1786
       ]
     },
-    "id": 1775,
+    "id": 1787,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1753,
+        "id": 1765,
         "literals": [
           "solidity",
           "^",
@@ -40,9 +40,9 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 1774,
+        "id": 1786,
         "linearizedBaseContracts": [
-          1774
+          1786
         ],
         "name": "EmeraldStates",
         "nameLocation": "70:13:15",
@@ -50,136 +50,136 @@
         "nodes": [
           {
             "canonicalName": "EmeraldStates.State",
-            "id": 1773,
+            "id": 1785,
             "members": [
               {
-                "id": 1754,
+                "id": 1766,
                 "name": "Mined",
                 "nameLocation": "171:5:15",
                 "nodeType": "EnumValue",
                 "src": "171:5:15"
               },
               {
-                "id": 1755,
+                "id": 1767,
                 "name": "Scaled",
                 "nameLocation": "206:6:15",
                 "nodeType": "EnumValue",
                 "src": "206:6:15"
               },
               {
-                "id": 1756,
+                "id": 1768,
                 "name": "PackedForLab",
                 "nameLocation": "241:12:15",
                 "nodeType": "EnumValue",
                 "src": "241:12:15"
               },
               {
-                "id": 1757,
+                "id": 1769,
                 "name": "ShipedToLab",
                 "nameLocation": "276:11:15",
                 "nodeType": "EnumValue",
                 "src": "276:11:15"
               },
               {
-                "id": 1758,
+                "id": 1770,
                 "name": "LabReceived",
                 "nameLocation": "311:11:15",
                 "nodeType": "EnumValue",
                 "src": "311:11:15"
               },
               {
-                "id": 1759,
+                "id": 1771,
                 "name": "Certified",
                 "nameLocation": "346:9:15",
                 "nodeType": "EnumValue",
                 "src": "346:9:15"
               },
               {
-                "id": 1760,
+                "id": 1772,
                 "name": "ShippedToStore",
                 "nameLocation": "381:14:15",
                 "nodeType": "EnumValue",
                 "src": "381:14:15"
               },
               {
-                "id": 1761,
+                "id": 1773,
                 "name": "StorageReceived",
                 "nameLocation": "416:15:15",
                 "nodeType": "EnumValue",
                 "src": "416:15:15"
               },
               {
-                "id": 1762,
+                "id": 1774,
                 "name": "Stored",
                 "nameLocation": "451:6:15",
                 "nodeType": "EnumValue",
                 "src": "451:6:15"
               },
               {
-                "id": 1763,
+                "id": 1775,
                 "name": "ForSale",
                 "nameLocation": "486:7:15",
                 "nodeType": "EnumValue",
                 "src": "486:7:15"
               },
               {
-                "id": 1764,
+                "id": 1776,
                 "name": "Sold",
                 "nameLocation": "521:4:15",
                 "nodeType": "EnumValue",
                 "src": "521:4:15"
               },
               {
-                "id": 1765,
+                "id": 1777,
                 "name": "ShipToManufacture",
                 "nameLocation": "557:17:15",
                 "nodeType": "EnumValue",
                 "src": "557:17:15"
               },
               {
-                "id": 1766,
+                "id": 1778,
                 "name": "ManufacturerReceived",
                 "nameLocation": "593:20:15",
                 "nodeType": "EnumValue",
                 "src": "593:20:15"
               },
               {
-                "id": 1767,
+                "id": 1779,
                 "name": "Manufactured",
                 "nameLocation": "629:12:15",
                 "nodeType": "EnumValue",
                 "src": "629:12:15"
               },
               {
-                "id": 1768,
+                "id": 1780,
                 "name": "PackedForSale",
                 "nameLocation": "665:13:15",
                 "nodeType": "EnumValue",
                 "src": "665:13:15"
               },
               {
-                "id": 1769,
+                "id": 1781,
                 "name": "Published",
                 "nameLocation": "701:9:15",
                 "nodeType": "EnumValue",
                 "src": "701:9:15"
               },
               {
-                "id": 1770,
+                "id": 1782,
                 "name": "Buyed",
                 "nameLocation": "737:5:15",
                 "nodeType": "EnumValue",
                 "src": "737:5:15"
               },
               {
-                "id": 1771,
+                "id": 1783,
                 "name": "ShippedToCustomer",
                 "nameLocation": "773:17:15",
                 "nodeType": "EnumValue",
                 "src": "773:17:15"
               },
               {
-                "id": 1772,
+                "id": 1784,
                 "name": "Delivered",
                 "nameLocation": "809:9:15",
                 "nodeType": "EnumValue",
@@ -192,7 +192,7 @@
             "src": "148:694:15"
           }
         ],
-        "scope": 1775,
+        "scope": 1787,
         "src": "61:784:15",
         "usedErrors": []
       }
@@ -275,11 +275,16 @@
       "links": {},
       "address": "0x23330Ef92b2fc1d9a48eBB246F868142C5188740",
       "transactionHash": "0xa4b67d5a9c48d7f76224ae8ac9363f05865b83ff6ea8d45c31d05449b7dc3332"
+    },
+    "1716824042151": {
+      "events": {},
+      "links": {},
+      "address": "0x495c2D552CbdB667b94EEaaf0cB15502878f7865",
+      "transactionHash": "0x60ed05a8b3d3f34c71020d6e344b8448ddf44703a63bd70e693992377e52c6a6"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-27T09:11:24.034Z",
-  "networkType": "ethereum",
+  "updatedAt": "2024-05-27T16:05:07.585Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

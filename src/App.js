@@ -3,7 +3,7 @@ import Web3 from 'web3'
 import {decodeParameters} from 'web3-eth-abi';
 import SupplyChain from './abis/SupplyChain.json'
 import Main from './Components/Main'
-const web3EthAbi = require("web3-eth-abi");
+
 
 class App extends Component {
 
@@ -91,7 +91,10 @@ class App extends Component {
 
   addMiner(originMinerID) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.addMiner(originMinerID).send({ from: this.state.account })
+    console.log("supplychain",this.state.supplychain.methods.addMiner(originMinerID))
+    this.state.supplychain.methods.addMiner(originMinerID).send({ 
+      from: this.state.account,
+      gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -100,7 +103,9 @@ class App extends Component {
 
   addLaboratory(laboratoryID) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.addLaboratory(laboratoryID).send({ from: this.state.account })
+    this.state.supplychain.methods.addLaboratory(laboratoryID).send({ 
+      from: this.state.account,
+      gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -109,7 +114,9 @@ class App extends Component {
 
   addCustodian(custodianID) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.addCustodian(custodianID).send({ from: this.state.account })
+    this.state.supplychain.methods.addCustodian(custodianID).send({ 
+      from: this.state.account,
+      gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -118,7 +125,9 @@ class App extends Component {
 
   addManufacturer(manufacturerID) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.addManufacturer(manufacturerID).send({ from: this.state.account })
+    this.state.supplychain.methods.addManufacturer(manufacturerID).send({ 
+      from: this.state.account,
+      gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -127,7 +136,9 @@ class App extends Component {
 
   addCustomer(customerID) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.addCustomer(customerID).send({ from: this.state.account })
+    this.state.supplychain.methods.addCustomer(customerID).send({ 
+      from: this.state.account,
+      gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -148,7 +159,9 @@ class App extends Component {
       originMineName,
       originMineInformation,
       originMineLatitude,
-      originMineLongitude).send({ from: this.state.account })
+      originMineLongitude).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -161,7 +174,9 @@ class App extends Component {
     this.setState({ loading: true })
     this.state.supplychain.methods.scaleEmerald(
       upc, 
-      scaleInfo).send({ from: this.state.account })
+      scaleInfo).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -176,7 +191,9 @@ class App extends Component {
     this.state.supplychain.methods.packScaledEmerald(
       upc, 
       laboratoryID, 
-      custodianID).send({ from: this.state.account })
+      custodianID).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -187,7 +204,9 @@ class App extends Component {
     upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.shipToLaboratory(
-      upc).send({ from: this.state.account })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -198,9 +217,24 @@ class App extends Component {
   laboratoryReceived(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.laboratoryReceived(
-      upc).send({ from: this.state.account })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975
+
+      })
     .once('receipt', (receipt) => {
       console.log(this.state.account)
+      this.setState({ loading: false })
+    })
+    .on('error', (error) => {
+      if (error.receipt) {
+        // Transaction was processed but failed
+        console.error('Transaction failed', error.receipt);
+      } else {
+        // Error occurred before the transaction was processed
+        console.error('Error sending transaction', error);
+      }
+      console.log(error)
       this.setState({ loading: false })
     })
     console.log('upc',upc);
@@ -212,7 +246,9 @@ class App extends Component {
     this.setState({ loading: true })
     this.state.supplychain.methods.certifyEmerald(
       upc, 
-      scaleInfo).send({ from: this.state.account })
+      scaleInfo).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -222,7 +258,10 @@ class App extends Component {
   shipToSecureStore(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.shipToSecureStore(upc)
-    .send({ from: this.state.account })
+    .send({ 
+      from: this.state.account,
+        gas: 6721975
+     })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -232,8 +271,10 @@ class App extends Component {
 
   SecureStorageReceived(upc) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.SecureStorageReceived(upc)
-    .send({ from: this.state.account })
+    this.state.supplychain.methods.secureStorageReceived(upc)
+    .send({ 
+      from: this.state.account,
+      gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -243,7 +284,9 @@ class App extends Component {
   StoreEmerald(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.StoreEmerald(
-      upc).send({ from: this.state.account })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -256,7 +299,9 @@ class App extends Component {
     this.setState({ loading: true })
     this.state.supplychain.methods.registerForSale(
       upc, 
-      marketPrice).send({ from: this.state.account })
+      marketPrice).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -266,7 +311,10 @@ class App extends Component {
   buyFromMiner(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.buyFromMiner(
-      upc).send({ from: this.state.account, value: Web3.utils.toWei("1", "ether") })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975,
+        value: Web3.utils.toWei("1", "ether")})
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -276,7 +324,9 @@ class App extends Component {
   shipToManufacturer(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.shipToManufacturer(
-      upc).send({ from: this.state.account })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -286,7 +336,9 @@ class App extends Component {
   receiveFromStorage(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.receiveFromStorage(upc)
-    .send({ from: this.state.account })
+    .send({ 
+      from: this.state.account,
+      gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -296,7 +348,9 @@ class App extends Component {
   manufactureEmerald(upc, manufacturedInfo) {
     this.setState({ loading: true })
     this.state.supplychain.methods.manufactureEmerald(
-      upc, manufacturedInfo).send({ from: this.state.account })
+      upc, manufacturedInfo).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -306,7 +360,9 @@ class App extends Component {
   packCutEmerald(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.packCutEmerald(
-      upc).send({ from: this.state.account })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -319,7 +375,9 @@ class App extends Component {
     this.setState({ loading: true })
     this.state.supplychain.methods.publishEmerald(
       upc, 
-      marketPrice).send({ from: this.state.account })
+      marketPrice).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -329,7 +387,10 @@ class App extends Component {
   buyFromManufacturer(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.buyFromManufacturer(upc)
-    .send({ from: this.state.account, value: Web3.utils.toWei("1", "ether") })
+    .send({ 
+      from: this.state.account,
+      gas: 6721975,
+      value: Web3.utils.toWei("1", "ether")})
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -339,7 +400,9 @@ class App extends Component {
   shipEmeraldToCustomer(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.shipEmeraldToCustomer(
-      upc).send({ from: this.state.account })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
@@ -349,7 +412,9 @@ class App extends Component {
   deliverToCustomer(upc) {
     this.setState({ loading: true })
     this.state.supplychain.methods.deliverToCustomer(
-      upc).send({ from: this.state.account })
+      upc).send({ 
+        from: this.state.account,
+        gas: 6721975 })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })

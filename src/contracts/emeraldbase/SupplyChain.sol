@@ -260,7 +260,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
     }
 
     // Define a function 'packScaledEmerald' that allows a Miner to mark an item 'PackedForLab'
-    function packScaledEmerald(uint256 _upc, address _laboratoryID, address _custodianID)
+    function packScaledEmerald(uint256 _upc, address payable _laboratoryID, address payable _custodianID)
         public 
         // Call modifier to check if upc has passed previous supply chain stage
         scaled(_upc)
@@ -412,8 +412,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
 
         // Tranfer emerald ownership
         //emeralds[_upc].setOwnerID(msg.sender);
-        emeralds[_upc].setManufacturerID(msg.sender);
-
+        emeralds[_upc].setManufacturerID(payable(msg.sender));
         // Update emerald state
         emeralds[_upc].setEmeraldState(EmeraldStates.State.Sold);
 
@@ -516,7 +515,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
 
         // Tranfer emerald ownership
         //emeralds[_upc].setOwnerID(msg.sender);
-        emeralds[_upc].setCustomerID(msg.sender);
+        emeralds[_upc].setCustomerID(payable(msg.sender));
 
         // Update emerald state
         emeralds[_upc].setEmeraldState(EmeraldStates.State.Buyed);

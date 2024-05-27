@@ -7,7 +7,7 @@ import "./EmeraldStates.sol";
 contract Emerald {
     uint256 sku;
     uint256 upc;
-    address ownerID;
+    address payable ownerID;
     address payable originMinerID;
     string originMineName;
     string originMineInformation;
@@ -19,10 +19,10 @@ contract Emerald {
     string certifiedProperties;
     string manufactureInfo;
     uint256 marketPrice;
-    address laboratoryID;
-    address  custodianID;
-    address  manufacturerID;
-    address  customerID;
+    address payable laboratoryID;
+    address payable custodianID;
+    address payable manufacturerID;
+    address payable customerID;
 
     constructor() {}
 
@@ -45,10 +45,10 @@ contract Emerald {
         productID =_sku + _upc;
         emeraldState = EmeraldStates.State.Mined;
         marketPrice = 0;
-        laboratoryID = address(0);
-        custodianID = address(0);
-         manufacturerID = address(0);
-        customerID = address(0);
+        laboratoryID = payable(address(0));
+        custodianID = payable(address(0));
+        manufacturerID = payable(address(0));
+        customerID = payable(address(0));
     }
 
     function setScaleInfo(string memory _scaleInfo) public {
@@ -71,19 +71,19 @@ contract Emerald {
         originMinerID = _newOwnerID;
     }
 
-    function authorizeLab(address _laboratoryID) public {
+    function authorizeLab(address payable _laboratoryID) public {
         laboratoryID = _laboratoryID;
     }
 
-    function authorizeCustodian(address _custodianID) public {
+    function authorizeCustodian(address  payable _custodianID) public {
         custodianID = _custodianID;
     }
 
-    function setManufacturerID(address _manufacturerID) public {
+    function setManufacturerID(address payable _manufacturerID) public {
         manufacturerID = _manufacturerID;
     }
 
-    function setCustomerID(address _customerID) public {
+    function setCustomerID(address payable _customerID) public {
         customerID = _customerID;
     }
 
@@ -115,19 +115,19 @@ contract Emerald {
         marketPrice = _marketPrice;
     }
 
-    function getCustomerID() public view returns (address ) {
+    function getCustomerID() public view returns (address payable) {
         return customerID;
     }
 
-    function getCustodianID() public view returns (address) {
+    function getCustodianID() public view returns (address payable) {
         return custodianID;
     }
 
-    function getLaboratoryID() public view returns (address) {
+    function getLaboratoryID() public view returns (address payable) {
         return laboratoryID;
     }
 
-    function getManufacturerID() public view returns (address ) {
+    function getManufacturerID() public view returns (address payable) {
         return manufacturerID;
     }
 
