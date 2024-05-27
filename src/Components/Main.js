@@ -4,6 +4,51 @@ import React, { Component } from 'react';
 class Main extends Component {
 
   render() {
+    const stateEnum = {
+      0: 'Mined',
+      1: 'Scaled',
+      2: 'PackedForLab',
+      3: 'ShipedToLab',
+      4: 'LabReceived',
+      5: 'Certified',
+      6: 'ShippedToStore',
+      7: 'StorageReceived',
+      8: 'Stored',
+      9: 'ForSale',
+      10: 'Sold',
+      11: 'ShipToManufacture',
+      12: 'ManufacturerReceived',
+      13: 'Manufactured',
+      14: 'PackedForSale',
+      15: 'Published',
+      16: 'Buyed',
+      17: 'ShippedToCustomer',
+      18: 'Delivered'
+    };
+
+    // for the fetch data 2
+    const stateValue = this.props.contractData2[4];
+
+    const skuValue2 = this.props.contractData2[0] || 0
+    const skuInt2 = Number(skuValue2);
+
+    const upcValue2 = this.props.contractData2[1] || 0
+    const upcInt2 = Number(upcValue2);
+
+    const price = this.props.contractData2[3] || 0
+    const priceInt = Number(price);
+
+    const productID = this.props.contractData2[2] || 0
+    const productIDInt = Number(productID);
+
+    // for the fetch data 1
+    const skuValue1 = this.props.contractData1[0] || 0
+    const skuInt1 = Number(skuValue1);
+
+    const upcValue1 = this.props.contractData1[1] || 0
+    const upcInt1 = Number(upcValue1);
+
+
     return (
       <div id="content">
         <h2>Emerald Overview</h2>
@@ -31,14 +76,15 @@ class Main extends Component {
           </div>
           <div className="info">
            <h5>BufferOne data</h5>
-              <b>SKU: </b>{this.props.contractData1[0]}<br></br>
-              <b>UPC: </b>{this.props.contractData1[1]}<br></br>
+              <b>SKU: </b>{skuInt1}<br></br>
+              <b>UPC: </b>{upcInt1}<br></br>
               <b>Owner ID: </b>{this.props.contractData1[2]}<br></br>
-              <b>originMinerID: </b>{this.props.contractData1[3]}<br></br>
-              <b>originMineName: </b>{this.props.contractData1[4]}<br></br>
-              <b>originMineInformation: </b>{this.props.contractData1[5]}<br></br> 
-              <b>originMineLatitude: </b>{this.props.contractData1[6]}<br></br>
-              <b>originMineLongitude: </b>{this.props.contractData1[7]}<br></br>     
+              <b>originMinerID: </b>{this.props.contractData1[2]}<br></br>
+              <b>originMineName: </b>{this.props.contractData1[3]}<br></br>
+              <b>originMineInformation: </b>{this.props.contractData1[4]}<br></br> 
+              <b>originMineLatitude: </b>{this.props.contractData1[5]}<br></br>
+              <b>originMineLongitude: </b>{this.props.contractData1[6]}<br></br>      
+
             </div>
         </form>
         </div>
@@ -66,11 +112,11 @@ class Main extends Component {
           </div>
           <div className="info">
            <h5>BufferTwo data</h5>
-              <b>SKU: </b>{this.props.contractData2[0]}<br></br>
-              <b>UPC: </b>{this.props.contractData2[1]}<br></br>
-              <b>productID: </b>{this.props.contractData2[2]}<br></br>
-              <b>price: </b>{this.props.contractData2[3]}<br></br>
-              <b>emeraldState: </b>{this.props.contractData2[4]}<br></br>
+              <b>SKU: </b>{skuInt2}<br></br>
+              <b>UPC: </b>{upcInt2}<br></br>
+              <b>productID: </b>{productIDInt}<br></br>
+              <b>price: </b>{priceInt}<br></br>
+              <b>emeraldState: </b>{stateEnum[stateValue]}<br></br>
               <b>laboratoryID: </b>{this.props.contractData2[5]}<br></br> 
               <b>custodianID: </b>{this.props.contractData2[6]}<br></br>
               <b>manufacturerID: </b>{this.props.contractData2[7]}<br></br>

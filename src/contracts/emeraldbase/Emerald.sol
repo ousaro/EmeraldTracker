@@ -42,7 +42,7 @@ contract Emerald {
         originMineInformation = _originMineInformation;
         originMineLatitude = _originMineLatitude;
         originMineLongitude = _originMineLongitude;
-        productID = sku + _upc;
+        productID =_sku + _upc;
         emeraldState = EmeraldStates.State.Mined;
         marketPrice = 0;
         laboratoryID = address(0);

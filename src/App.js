@@ -358,18 +358,20 @@ class App extends Component {
 
   async fetchItemBufferOne(upc){
     this.setState({ loading: true })
-    const bufferOne = await this.state.supplychain.methods.fetchItemBufferOne(upc)
-    const decodeBasicData = web3EthAbi.decodeParameters(['uint256','uint256','address','string','string','string','string'],bufferOne)
+    const bufferOne = await this.state.supplychain.methods.fetchItemBufferOne(upc).call()
+    const decodeBasicData = decodeParameters(['uint256','uint256','address','string','string','string','string'],bufferOne)
     this.setState({ contractData1: decodeBasicData});
+    console.log("result",decodeBasicData)
     console.log('respuesta',this.state.contractData1);
     this.setState({ loading: false })
   }
 
   async fetchItemBufferTwo(upc) {
     this.setState({ loading: true })
-    const bufferTwo = await this.state.supplychain.methods.fetchItemBufferTwo(upc)
-    const decodeDetailedData = decodeParameters(['uint256','uint256','address','uint256','string','address','address','address','address'],bufferTwo)
+    const bufferTwo = await this.state.supplychain.methods.fetchItemBufferTwo(upc).call()
+    const decodeDetailedData = decodeParameters(['uint256','uint256','uint256','uint256','uint256','address','address','address','address'],bufferTwo)
     this.setState({contractData2: decodeDetailedData})
+    console.log("result",decodeDetailedData)
     console.log('respuesta',this.state.contractData2);
     this.setState({ loading: false })
   }  
