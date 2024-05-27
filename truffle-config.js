@@ -7,11 +7,11 @@ const mnemonicPhrase = "prize cause index swarm fence rabbit craft crop scout su
 
 module.exports = {
   networks: {
-    development: {
+    /*development: {                                  //Changed to ganache
       host: "127.0.0.1",
       port: 8545,
       network_id: "*" // Match any network id
-    },
+    },*/
     ganache: {
       host: "127.0.0.1",          // Localhost
       port: 7545,                 // Standard Ganache port
@@ -26,7 +26,7 @@ module.exports = {
   contracts_build_directory: './src/abis/',
   compilers: {
     solc: {
-      version: "0.8.10",
+      version: "0.8.19",
       settings: {
         optimizer: {
           enabled: true,

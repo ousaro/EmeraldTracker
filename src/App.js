@@ -359,7 +359,7 @@ class App extends Component {
   async fetchItemBufferOne(upc){
     this.setState({ loading: true })
     const bufferOne = await this.state.supplychain.methods.fetchItemBufferOne(upc).call()
-    const decodeBasicData = decodeParameters(['uint256','uint256','address','string','string','string','string'],bufferOne)
+    const decodeBasicData = web3EthAbi.decodeParameters(['uint256','uint256','address','string','string','string','string'],bufferOne.toString())
     this.setState({ contractData1: decodeBasicData});
     console.log("result",decodeBasicData)
     console.log('respuesta',this.state.contractData1);
