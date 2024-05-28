@@ -7,23 +7,23 @@
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
-  "sourceMap": "61:784:15:-:0;;;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "61:784:15:-:0;;;;;",
+  "sourceMap": "61:784:17:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "61:784:17:-:0;;;;;",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.10;\r\n\r\ncontract EmeraldStates {\r\n\r\n    // Define enum 'State' with the following values:\r\n    enum State { \r\n        Mined,               // 0\r\n        Scaled,              // 1\r\n        PackedForLab,        // 2\r\n        ShipedToLab,         // 3\r\n        LabReceived,         // 4\r\n        Certified,           // 5\r\n        ShippedToStore,      // 6\r\n        StorageReceived,     // 7\r\n        Stored,              // 8\r\n        ForSale,             // 9\r\n        Sold,                // 10\r\n        ShipToManufacture,   // 11\r\n        ManufacturerReceived,// 12\r\n        Manufactured,        // 13\r\n        PackedForSale,       // 14\r\n        Published,           // 15\r\n        Buyed,               // 16\r\n        ShippedToCustomer,   // 17\r\n        Delivered            // 18\r\n    }\r\n}\r\n",
   "sourcePath": "D:\\INE1\\S2\\SecurityProject2\\goldtracker\\src\\contracts\\emeraldbase\\EmeraldStates.sol",
   "ast": {
     "absolutePath": "project:/src/contracts/emeraldbase/EmeraldStates.sol",
     "exportedSymbols": {
       "EmeraldStates": [
-        1786
+        2806
       ]
     },
-    "id": 1787,
+    "id": 2807,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1765,
+        "id": 2785,
         "literals": [
           "solidity",
           "^",
@@ -31,7 +31,7 @@
           ".10"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:24:15"
+        "src": "33:24:17"
       },
       {
         "abstract": false,
@@ -40,164 +40,164 @@
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
-        "id": 1786,
+        "id": 2806,
         "linearizedBaseContracts": [
-          1786
+          2806
         ],
         "name": "EmeraldStates",
-        "nameLocation": "70:13:15",
+        "nameLocation": "70:13:17",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "EmeraldStates.State",
-            "id": 1785,
+            "id": 2805,
             "members": [
               {
-                "id": 1766,
+                "id": 2786,
                 "name": "Mined",
-                "nameLocation": "171:5:15",
+                "nameLocation": "171:5:17",
                 "nodeType": "EnumValue",
-                "src": "171:5:15"
+                "src": "171:5:17"
               },
               {
-                "id": 1767,
+                "id": 2787,
                 "name": "Scaled",
-                "nameLocation": "206:6:15",
+                "nameLocation": "206:6:17",
                 "nodeType": "EnumValue",
-                "src": "206:6:15"
+                "src": "206:6:17"
               },
               {
-                "id": 1768,
+                "id": 2788,
                 "name": "PackedForLab",
-                "nameLocation": "241:12:15",
+                "nameLocation": "241:12:17",
                 "nodeType": "EnumValue",
-                "src": "241:12:15"
+                "src": "241:12:17"
               },
               {
-                "id": 1769,
+                "id": 2789,
                 "name": "ShipedToLab",
-                "nameLocation": "276:11:15",
+                "nameLocation": "276:11:17",
                 "nodeType": "EnumValue",
-                "src": "276:11:15"
+                "src": "276:11:17"
               },
               {
-                "id": 1770,
+                "id": 2790,
                 "name": "LabReceived",
-                "nameLocation": "311:11:15",
+                "nameLocation": "311:11:17",
                 "nodeType": "EnumValue",
-                "src": "311:11:15"
+                "src": "311:11:17"
               },
               {
-                "id": 1771,
+                "id": 2791,
                 "name": "Certified",
-                "nameLocation": "346:9:15",
+                "nameLocation": "346:9:17",
                 "nodeType": "EnumValue",
-                "src": "346:9:15"
+                "src": "346:9:17"
               },
               {
-                "id": 1772,
+                "id": 2792,
                 "name": "ShippedToStore",
-                "nameLocation": "381:14:15",
+                "nameLocation": "381:14:17",
                 "nodeType": "EnumValue",
-                "src": "381:14:15"
+                "src": "381:14:17"
               },
               {
-                "id": 1773,
+                "id": 2793,
                 "name": "StorageReceived",
-                "nameLocation": "416:15:15",
+                "nameLocation": "416:15:17",
                 "nodeType": "EnumValue",
-                "src": "416:15:15"
+                "src": "416:15:17"
               },
               {
-                "id": 1774,
+                "id": 2794,
                 "name": "Stored",
-                "nameLocation": "451:6:15",
+                "nameLocation": "451:6:17",
                 "nodeType": "EnumValue",
-                "src": "451:6:15"
+                "src": "451:6:17"
               },
               {
-                "id": 1775,
+                "id": 2795,
                 "name": "ForSale",
-                "nameLocation": "486:7:15",
+                "nameLocation": "486:7:17",
                 "nodeType": "EnumValue",
-                "src": "486:7:15"
+                "src": "486:7:17"
               },
               {
-                "id": 1776,
+                "id": 2796,
                 "name": "Sold",
-                "nameLocation": "521:4:15",
+                "nameLocation": "521:4:17",
                 "nodeType": "EnumValue",
-                "src": "521:4:15"
+                "src": "521:4:17"
               },
               {
-                "id": 1777,
+                "id": 2797,
                 "name": "ShipToManufacture",
-                "nameLocation": "557:17:15",
+                "nameLocation": "557:17:17",
                 "nodeType": "EnumValue",
-                "src": "557:17:15"
+                "src": "557:17:17"
               },
               {
-                "id": 1778,
+                "id": 2798,
                 "name": "ManufacturerReceived",
-                "nameLocation": "593:20:15",
+                "nameLocation": "593:20:17",
                 "nodeType": "EnumValue",
-                "src": "593:20:15"
+                "src": "593:20:17"
               },
               {
-                "id": 1779,
+                "id": 2799,
                 "name": "Manufactured",
-                "nameLocation": "629:12:15",
+                "nameLocation": "629:12:17",
                 "nodeType": "EnumValue",
-                "src": "629:12:15"
+                "src": "629:12:17"
               },
               {
-                "id": 1780,
+                "id": 2800,
                 "name": "PackedForSale",
-                "nameLocation": "665:13:15",
+                "nameLocation": "665:13:17",
                 "nodeType": "EnumValue",
-                "src": "665:13:15"
+                "src": "665:13:17"
               },
               {
-                "id": 1781,
+                "id": 2801,
                 "name": "Published",
-                "nameLocation": "701:9:15",
+                "nameLocation": "701:9:17",
                 "nodeType": "EnumValue",
-                "src": "701:9:15"
+                "src": "701:9:17"
               },
               {
-                "id": 1782,
+                "id": 2802,
                 "name": "Buyed",
-                "nameLocation": "737:5:15",
+                "nameLocation": "737:5:17",
                 "nodeType": "EnumValue",
-                "src": "737:5:15"
+                "src": "737:5:17"
               },
               {
-                "id": 1783,
+                "id": 2803,
                 "name": "ShippedToCustomer",
-                "nameLocation": "773:17:15",
+                "nameLocation": "773:17:17",
                 "nodeType": "EnumValue",
-                "src": "773:17:15"
+                "src": "773:17:17"
               },
               {
-                "id": 1784,
+                "id": 2804,
                 "name": "Delivered",
-                "nameLocation": "809:9:15",
+                "nameLocation": "809:9:17",
                 "nodeType": "EnumValue",
-                "src": "809:9:15"
+                "src": "809:9:17"
               }
             ],
             "name": "State",
-            "nameLocation": "153:5:15",
+            "nameLocation": "153:5:17",
             "nodeType": "EnumDefinition",
-            "src": "148:694:15"
+            "src": "148:694:17"
           }
         ],
-        "scope": 1787,
-        "src": "61:784:15",
+        "scope": 2807,
+        "src": "61:784:17",
         "usedErrors": []
       }
     ],
-    "src": "33:814:15"
+    "src": "33:814:17"
   },
   "compiler": {
     "name": "solc",
@@ -207,8 +207,8 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xd1c50999056eAAB298e65290A78048Ea30392C13",
-      "transactionHash": "0x166e15ae48d07b9e34fa7d157afc5d5b82ab6038e5f4c67bf05dd123ef0a746e"
+      "address": "0xddc3BCea3c38Cd3e3C79fF7A159FEcfCdcd6d2bc",
+      "transactionHash": "0x56c123c6a349b2f16099e840e3294d67e8b48dc5912adaf99c04c085e4f34dab"
     },
     "1614124968336": {
       "events": {},
@@ -281,10 +281,64 @@
       "links": {},
       "address": "0x495c2D552CbdB667b94EEaaf0cB15502878f7865",
       "transactionHash": "0x60ed05a8b3d3f34c71020d6e344b8448ddf44703a63bd70e693992377e52c6a6"
+    },
+    "1716889132052": {
+      "events": {},
+      "links": {},
+      "address": "0x8c99823e2eFABC244d1565BEcC1d19b284599826",
+      "transactionHash": "0xcdb377561c1639e2aa7053fc528995f32e2d0c73b11a21a503b8241361b0d8fc"
+    },
+    "1716889563768": {
+      "events": {},
+      "links": {},
+      "address": "0xb6bCCb0F1e0E5875eAc57aAE74c621971b692a52",
+      "transactionHash": "0xf278e93a2c435206cead25d635151793864b9759d4c0a839db4c70b4714a217a"
+    },
+    "1716891263302": {
+      "events": {},
+      "links": {},
+      "address": "0xc00FeE56e3D8a3d20EDf1fCf1157419207AaE4EB",
+      "transactionHash": "0x0284ec44b3eda726a2db330bc0197fd29d9765b8c6f1571b1f4fef3c13d08a94"
+    },
+    "1716892216989": {
+      "events": {},
+      "links": {},
+      "address": "0xF8826255eC0CE615315851824625F6343817ABaE",
+      "transactionHash": "0xb5ec5ac8678bb078c6e8916cf924d510e221674c40eb6e627b62d2e1c0b26e6f"
+    },
+    "1716892771466": {
+      "events": {},
+      "links": {},
+      "address": "0xF849FF802436Adb01F7f078D549f064E7eD4581D",
+      "transactionHash": "0xb9678b544d865ea07986aa04962b8f1bd4e300a4f3ca37986beb561355a91ddf"
+    },
+    "1716894241034": {
+      "events": {},
+      "links": {},
+      "address": "0x28e2634665198fFEB451B25a963C4a423dB60B3E",
+      "transactionHash": "0x2a241c40ce61e90944e34c3e6ce3f03490eb7ec1c2d69ea74e796e4b019469d5"
+    },
+    "1716902994984": {
+      "events": {},
+      "links": {},
+      "address": "0x5810E1Bf54d984De03816904C8D74a301Af671bC",
+      "transactionHash": "0x8a13997806c769034d37af3ea40e0bd91d0998dbc92cb4634dbb248ef330b67a"
+    },
+    "1716903379342": {
+      "events": {},
+      "links": {},
+      "address": "0xBf4Bf350F16BA547d20BC7bbaaD68b291622Fa54",
+      "transactionHash": "0xaf1310173b4af3d5b60ccf7f618800ff9ea7b0778fcd7cb04f663a8c6b6659dd"
+    },
+    "1716904534449": {
+      "events": {},
+      "links": {},
+      "address": "0x6466cff1A0751c5191B1718eE77bb43cA0b86F08",
+      "transactionHash": "0xf18438efc1d2e3497ca0f21f8cfabe077f49cc9b4c1186bb28cc5d98e2665446"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-05-27T16:05:07.585Z",
+  "updatedAt": "2024-05-28T14:14:19.128Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

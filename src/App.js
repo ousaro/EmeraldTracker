@@ -283,7 +283,7 @@ class App extends Component {
 
   StoreEmerald(upc) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.StoreEmerald(
+    this.state.supplychain.methods.storeEmerald(
       upc).send({ 
         from: this.state.account,
         gas: 6721975 })
@@ -345,10 +345,10 @@ class App extends Component {
     console.log('upc',upc);
   }    
 
-  manufactureEmerald(upc, manufacturedInfo) {
+  manufactureEmerald(upc, manufacturedInfo, marketPrice) {
     this.setState({ loading: true })
     this.state.supplychain.methods.manufactureEmerald(
-      upc, manufacturedInfo).send({ 
+      upc, manufacturedInfo, marketPrice).send({ 
         from: this.state.account,
         gas: 6721975 })
     .once('receipt', (receipt) => {
@@ -359,7 +359,7 @@ class App extends Component {
 
   packCutEmerald(upc) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.packCutEmerald(
+    this.state.supplychain.methods.packForSale(
       upc).send({ 
         from: this.state.account,
         gas: 6721975 })
@@ -373,7 +373,7 @@ class App extends Component {
     upc, 
     marketPrice) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.publishEmerald(
+    this.state.supplychain.methods.publish(
       upc, 
       marketPrice).send({ 
         from: this.state.account,
@@ -399,7 +399,7 @@ class App extends Component {
 
   shipEmeraldToCustomer(upc) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.shipEmeraldToCustomer(
+    this.state.supplychain.methods.shipToCustomer(
       upc).send({ 
         from: this.state.account,
         gas: 6721975 })
@@ -411,7 +411,7 @@ class App extends Component {
   
   deliverToCustomer(upc) {
     this.setState({ loading: true })
-    this.state.supplychain.methods.deliverToCustomer(
+    this.state.supplychain.methods.customerReceived(
       upc).send({ 
         from: this.state.account,
         gas: 6721975 })

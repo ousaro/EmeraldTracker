@@ -248,7 +248,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
         // Call modifier to check if upc has passed previous supply chain stage
         mined(_upc)
         // Call modifier to verify caller of this function
-        verifyCaller(emeralds[_upc].getOriginMinerID())
+        //verifyCaller(emeralds[_upc].getOriginMinerID())
         onlyMiner 
     {
         // Update the appropriate fields
@@ -451,7 +451,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
     }
 
     // Define a function 'manufactureEmerald' that allows the manufacturer mark an item 'Manufactured'
-    function manufactureEmerald(uint256 _upc, string memory _manofactureInfo, uint _price)
+    function manufactureEmerald(uint256 _upc, string memory _manofactureInfo, uint256 _price)
         public 
         // Call modifier to check if upc has passed previous supply chain stage
         manufacturerReceived(_upc)

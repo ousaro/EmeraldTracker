@@ -764,7 +764,7 @@ class Main extends Component {
                 <form onSubmit={(event) => {
                   event.preventDefault()
                   this.manufacturedInfo = "data manufactured"
-                  this.props.manufactureEmerald(this.upc, this.manufacturedInfo)
+                  this.props.manufactureEmerald(this.upc, this.manufacturedInfo, priceInt)
                 }}>
                   Emerald UPC
                   <br></br>
@@ -810,8 +810,7 @@ class Main extends Component {
         <div class="form-group">
                 <form onSubmit={(event) => {
                   event.preventDefault()
-                  this.marketPrice = window.web3.utils.toWei("1", 'Ether')
-                  this.props.publishEmerald(this.upc, this.marketPrice)
+                  this.props.publishEmerald(this.upc, priceInt)
                 }}>
                   Emerald UPC
                   <br></br>
