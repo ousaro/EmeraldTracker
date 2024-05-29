@@ -20,6 +20,9 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
     // Define a variable called 'sku' for Stock Keeping Unit (SKU)
     uint256 sku;
 
+    // Define owner address
+    address payable ownerID;
+
     // Define a public mapping 'emeralds' that maps the UPC to an Emerald.
     mapping (uint256 => Emerald) emeralds;
 
@@ -51,7 +54,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
     event Delivered(uint256 upc);
 
     // Define a modifer that verifies the Caller
-    modifier verifyCaller(address _address) {
+    modifier verifyCaller(address payable _address) {
         require(msg.sender == _address, "Caller is not authorized");
         _;
     }
@@ -190,7 +193,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
     // and set 'sku' to 1
     // and set 'upc' to 1
     constructor() {
-        //owner = msg.sender;
+        ownerID = payable(msg.sender);
         sku = 1;
         upc = 1;
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
@@ -198,11 +201,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
 
     // Define a function 'kill' if required
     function kill() public onlyOwner {
-        //selfdestruct(payable(msg.sender));
-    }
-
-    function withdraw() public onlyOwner {
-        payable(owner()).transfer(address(this).balance);
+        selfdestruct(payable(msg.sender));
     }
 
 
@@ -210,6 +209,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
     function extractEmerald(
         uint256 _sku,
         uint256 _upc,
+        address payable _ownerID,
         address payable _originMinerID,
         string memory _originMineName,
         string memory _originMineInformation, 
@@ -219,11 +219,13 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
         public
         onlyMiner
     {
+        
         // Add emerald to emeralds list in the contract
         Emerald emerald = new Emerald();
         emerald.setExtractionInfo(
             _sku,
             _upc,
+            _ownerID,
             _originMinerID,
             _originMineName,
             _originMineInformation, 
@@ -248,7 +250,7 @@ contract  SupplyChain is Ownable, AccessControl, MinerRole, LaboratoryRole, Cust
         // Call modifier to check if upc has passed previous supply chain stage
         mined(_upc)
         // Call modifier to verify caller of this function
-        //verifyCaller(emeralds[_upc].getOriginMinerID())
+        verifyCaller(emeralds[_upc].getOriginMinerID())
         onlyMiner 
     {
         // Update the appropriate fields

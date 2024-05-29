@@ -154,7 +154,8 @@ class App extends Component {
     originMineLongitude) {
     this.setState({ loading: true })
     this.state.supplychain.methods.extractEmerald(sku,
-      upc, 
+      upc,
+      this.state.account,
       originMinerID,
       originMineName,
       originMineInformation,
@@ -424,7 +425,7 @@ class App extends Component {
   async fetchItemBufferOne(upc){
     this.setState({ loading: true })
     const bufferOne = await this.state.supplychain.methods.fetchItemBufferOne(upc).call()
-    const decodeBasicData = decodeParameters(['uint256','uint256','address','string','string','string','string'],bufferOne)
+    const decodeBasicData = decodeParameters(['uint256','uint256','address','address','string','string','string','string'],bufferOne)
     this.setState({ contractData1: decodeBasicData});
     console.log("result",decodeBasicData)
     console.log('respuesta',this.state.contractData1);
@@ -444,12 +445,22 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div><b>Active account:</b> {this.state.account}</div>
+         <nav class="navbar">
+            <div class="navbar-brand">
+                Emerald Tracker
+            </div>
+            <div class="navbar-Account">
+                <b class="navbar-label">Active account</b>
+                <span class="navbar-address">{this.state.account}</span>
+            </div>
+           
+        </nav>
+       
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex">
               { this.state.loading
-                ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
+                ? <div id="loader" className="dashboard-container"><p className='Loading'>Loading...</p></div>
                 : <Main
                   contractData1 = {this.state.contractData1}
                   contractData2 = {this.state.contractData2}

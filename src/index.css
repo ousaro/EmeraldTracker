@@ -1,8 +1,8 @@
 body {
-  background-color:#fff;
+  background-color: #111111;
   padding: 2em;
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
-  color: #212121;
+  color: black;
 }
 .container {
   width: 80%;
@@ -14,66 +14,125 @@ body {
   font-weight: bolder;
 }
 
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fb5520; /* Dark background color */
+  padding: 10px 20px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size:3em;
+  color: white;
+}
+
+.navbar-Account{
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-label{
+  color: black;
+  font-size: 1.5em;
+  margin: auto;
+}
+
+.navbar-address{
+  color: white;
+
+}
+
+/* dashbord.css */
+
+/* Dashboard specific styles */
+.dashboard-container {
+  margin: auto; /* Center the dashboard horizontally */
+  padding: 1px 20px 20px 20px; /* Add padding around the dashboard */
+  background-color: #1e1e1e ; /* Light background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  border-radius: 10px; /* Rounded corners */
+  border-top-left-radius: 0em;
+  border-top-right-radius: 0em;
+}
+
+.Loading{
+
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+}
+
+.dashboard-heading {
+  font-size: 32px; /* Larger font size for dashboard headings */
+  margin-bottom: 20px; /* Add some space below the heading */
+  color: white; /* Heading text color */
+  text-align: center;
+}
+
+.dashboard-content {
+  width: 90%;
+  background-color: #282828 ; /* White background color for dashboard content */
+  padding: 20px; /* Add padding inside the content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Shadow effect */
+  margin-bottom: 10px;
+  color: white;
+}
+
+
+
+.dashboard-button {
+  background-color: #fb5520 ; /* Green color for dashboard buttons */
+  color: #fff; /* White text color */
+  border: none;
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.dashboard-button:hover {
+  background-color:  #f56d3f; /* Darker green color on hover */
+  box-shadow: 1px 1px 10px  #fb5520;
+}
+
 input {
     width: 100%;
-    padding: 4px 4px;
+    height: 2em;
+    font-size: 1em;
+    padding: 5px 4px;
     margin: 4px 0;
-}
-
-button {
-    cursor: pointer;
-    background-color: #4CAF50;
-    border: none;
+    border-radius: 0.5em;
+    background-color: #363636;
     color: white;
-    background-color: #00BCD4;
-    font-size: 16px;
-    padding: 8px 8px;
-    text-decoration: none;
-    margin: 4px 4px;
-    cursor: pointer;
 }
 
-
-.sell { 
-  background-color: white;
-  color: #D1C4E9;
-}
-
-.ftc-intro {
-  background-color:#0097A7;
-  color:white;
-  width:100%;
-  padding:5px;
-}
-
-.form-group {
-  background-color:#0097A7;
-  color:black;
-  width:100%;
-  padding:4px;
-  border-radius: 2px;
-  background-color: #f8f8f8;
-}
-
-.form-break {
-  background-color:#fff;
-  color:white;
-  width:100%;
-  padding:0px;
-}
-
-.horizontal-rule {
-  background-color:#BDBDBD;
+input:focus{
+  outline: none;
 }
 
 .column {
-  float: left;
-  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  justify-content: center;
 }
 
 .column2 {
-  float: left;
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
 }
 
 /* Clear floats after the columns */
@@ -83,8 +142,90 @@ button {
   clear: both;
 }
 
+/* styles.css */
+
+/* Style for the table container */
 .info {
-  font-size: 14px;
-  padding: 10px 10px;
-  margin: 4px 2px;
+  margin-top:15px;
+  background-color: #2C2C2C; /* Dark background */
+  padding: 1px 15px 15px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Style for the table title */
+.table-title {
+  color: #FFFFFF; /* White text */
+  font-size: 18px;
+  margin-bottom: 10px; /* Space below the title */
+  text-align: left; /* Align the title to the left */
+  border-bottom: 2px solid #555555; /* Bottom border for separation */
+  padding-bottom: 10px; /* Padding for spacing */
+}
+
+/* Style for the table header */
+.data-table th {
+  background-color: #444444; /* Darker gray for the header */
+  color: #FFFFFF; /* White text */
+  padding: 5px;
+  text-align: left;
+  border-bottom: 2px solid #555555; /* Border for separation */
+  border-right: 2px solid #555555; /* Right border for columns */
+  border-left: 2px solid #555555; /* Right border for columns */
+}
+
+/* Style for the table rows */
+.data-table td{
+  padding: 5px;
+  color: #DDDDDD; /* Light gray text */
+  border-right: 2px solid #555555; /* Right border for columns */
+  border-left: 2px solid #555555; /* Right border for columns */
+}
+
+
+/* Add some spacing and border to the table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Add borders to the table rows */
+.data-table tr {
+  border-bottom: 1px solid #444444;
+}
+
+/* Add hover effect to the table rows */
+.data-table tr:hover {
+  background-color: #555555; /* Slightly darker background on hover */
+}
+
+
+/* Style for the state map container */
+.state-map {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; /* Space between columns */
+}
+
+/* Style for each state column */
+.state-column {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between items */
+}
+
+/* Style for each state item */
+.state-item {
+  background-color: #444444; /* Darker gray for the item */
+  color: #FFFFFF; /* White text */
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  text-align: center; /* Center align text */
+}
+
+/* Hover effect for state items */
+.state-item:hover {
+  background-color: #555555; /* Slightly darker background on hover */
+}
+

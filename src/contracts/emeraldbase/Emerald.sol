@@ -29,6 +29,7 @@ contract Emerald {
     function setExtractionInfo(
         uint256 _sku,
         uint256 _upc,
+        address payable _ownerID,
         address payable _originMinerID,
         string memory _originMineName,
         string memory _originMineInformation,
@@ -37,6 +38,7 @@ contract Emerald {
     ) public {
         sku = _sku;
         upc = _upc;
+        ownerID = _ownerID;
         originMinerID = _originMinerID;
         originMineName = _originMineName;
         originMineInformation = _originMineInformation;
@@ -53,6 +55,7 @@ contract Emerald {
 
     function setScaleInfo(string memory _scaleInfo) public {
         scaleInfo = _scaleInfo;
+        
     }
 
     function setCertifiedInfo(string memory _certifiedProperties) public {
@@ -68,9 +71,12 @@ contract Emerald {
     }
 
     function setOwnerID(address payable _newOwnerID) public {
-        originMinerID = _newOwnerID;
+        ownerID = _newOwnerID;
     }
 
+    function setMinerID(address payable _minerID) public {
+        originMinerID = _minerID;
+    }
     function authorizeLab(address payable _laboratoryID) public {
         laboratoryID = _laboratoryID;
     }
@@ -99,7 +105,7 @@ contract Emerald {
         return productID;
     }
 
-    function getOwnerID() public view returns (address) {
+    function getOwnerID() public view returns (address payable) {
         return ownerID;
     }
 
@@ -156,6 +162,7 @@ contract Emerald {
             abi.encode(
                 sku,
                 upc,
+                ownerID,
                 originMinerID,
                 originMineName,
                 originMineInformation,

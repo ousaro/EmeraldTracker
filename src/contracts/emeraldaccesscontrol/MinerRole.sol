@@ -18,12 +18,12 @@ contract MinerRole is AccessControl {
 
   // Define a modifier that checks if the caller has the miner role
   modifier onlyMiner() {
-    require(isMiner(msg.sender), "Caller is not a miner.");
+    require(isMiner(payable(msg.sender)), "Caller is not a miner.");
     _;
   }
 
   // Define a function to check if an address has the miner role
-  function isMiner(address account) public view returns (bool) {
+  function isMiner(address payable account) public view returns (bool) {
     return hasRole(MINER_ROLE, account);
   }
 
